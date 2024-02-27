@@ -1,21 +1,21 @@
 #include <stdexcept>
 #include <cmath> 
-#include <iostream> // Added to use cout
+#include <iostream> 
 
 using namespace std;
 
-,
+//this is the decleration of function that will solve problem with bisection method
 double bisectionFunction(double (*f)(double), double a, double b, double tol = 1e-6, int maxIteration = 10) {
     
     if (f(a) * f(b) >= 0) {
         throw invalid_argument("Root must be within the interval.");
     }
 
-    int counter=0;
+    int counter=0; // counter to count the iteration
     
     while ((abs(b-a)/2 > tol)   && (counter < maxIteration)) {
         double c=(a+b)/2;
-       
+       //finding new root and updating the boundarie of the roots and checking new root
         if (f(c)==0) {
             return c; 
         } else if (f(a) * f(c) < 0) {
@@ -28,9 +28,9 @@ double bisectionFunction(double (*f)(double), double a, double b, double tol = 1
     return (a+b)/2; 
 }
 
-// sample funtion 
+// sample funtion that is given by me by default
 double func(double x) {
-    return x * x * x - x * x + 2;
+    return x * x * x - x * x -4-x;
 }
 
 
