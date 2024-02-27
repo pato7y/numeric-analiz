@@ -15,7 +15,7 @@ double bisectionFunction(double (*f)(double), double a, double b, double tol = 1
     
     while ((abs(b-a)/2 > tol)   && (counter < maxIteration)) {
         double c=(a+b)/2;
-       //finding new root and updating the boundarie of the roots and checking new root
+       //finding new root and updating the boundaries of the roots and checking new root
         if (f(c)==0) {
             return c; 
         } else if (f(a) * f(c) < 0) {
@@ -28,13 +28,14 @@ double bisectionFunction(double (*f)(double), double a, double b, double tol = 1
     return (a+b)/2; 
 }
 
-// sample funtion that is given by me by default
+// sample funtion that is given by me by default  also this part may be updated later 
 double func(double x) {
     return x * x * x - x * x -4-x;
 }
 
 
 int main() {
+    // also this part may be updated later 
     try {
         double root = bisectionFunction(func, -2, 2); 
         cout << " root: " << root << endl; 
