@@ -36,12 +36,11 @@ double func(double x) {
 
 int main() {
     // also this part may be updated later 
-    try {
+
         double root = bisectionFunction(func, -2, 2); 
         cout << " root: " << root << endl; 
-    } catch (const invalid_argument& e) {
-        cout << "Error: " << e.what() << endl; 
-    }
+   
+       
 
     return 0;
 }
